@@ -1,4 +1,5 @@
 module QuizzesHelper
+    
     def total_expenses
         other_bills = @quiz.other_bills 
         leisure = @quiz.leisure
@@ -34,25 +35,12 @@ module QuizzesHelper
     def car_bills_eval
         car_bills = @quiz.car_bills
         if car_bills > 0.4*income
-            car_value_eval
+            "You are spending more than 40% of your income for your car."
         else
             "Your monthly car expenses are under control!"
         end
     end
-    def car_value_eval
-        car_value = @quiz.car_value
-        car_forty = "You are spending more than 40% of your income for your car."
-        car_fancy = "It is good that you have chosen a good quality car, given its current car value. It does not sit well inside your budget though. However, it is not a good idea to sell it as cars depreciate in value really fast."
-        car_ins = "You can save a little bit by looking for a more affordable car insurance if you think you are spending a bit more for your current policy."
-        car_maintenance = "And if you are spending so much on car maintenance, it might be a better idea to buy a better car or just don't use that car anymore."
-        if car_value < 5000
-            car_forty + car_maintenance
-        elsif car_value > 30000
-            car_forty + car_fancy +  car_ins
-        else
-            car_forty + car_ins + car_maintenance
-        end
-    end
+
     
     def total_loans
         student_loan = @quiz.student_loan
@@ -64,28 +52,31 @@ module QuizzesHelper
     def total_loans_eval
         abc = total_loans
         income = @quiz.income
+        debt_repay = @quiz.debt_repay
+        debt_repay_value = @quiz.debt_repay_value
         income60 = "Your total loans, excluding house and car loans, are more than 5 times your current annual income."
         income36 = "Your total loans, excluding house and car loans, are less than 3 times your current annual income."
         income12 = "Your total loans, excluding house and car loans, is only less than a year's worth of your current annual income."
         income6 = "Your total loans, excluding house and car loans, is only less than half a year's worth of your current annual income."
         debtfree = "Congratulations on being debt-free!"
         if abc > 60*income
-            income60 + debt_repay_eval
+            income60 + debt_repay_eval(debt_repay, debt_repay_value)
         elsif abc > 36*income
-            income36 + debt_repay_eval
+            income36 + debt_repay_eval(debt_repay, debt_repay_value)
         elsif abc == 0
             debtfree
         elsif abc < 6*income
-            income6 + debt_repay_eval
+            income6 + debt_repay_eval(debt_repay, debt_repay_value)
         elsif abc < 12*income
-            income12 + debt_repay_eval
+            income12 + debt_repay_eval(debt_repay, debt_repay_value)
 
         end
     end
 
         
-    def debt_repay_eval
+    def debt_repay_eval(debt_repay, debt_repay_value)
         debt_repay = @quiz.debt_repay
+        debt_repay_value = @quiz.debt_repay_value
         debt_repay_true =  "It is good that you already have a debt repayment program in place. All you need to do is pay for your debt diligently and soon enough, you're going to be debt-free!"
         debt_repay_false =  "It is recommended to have a debt repayment plan or program in place. You can make your own payment plan or you may visit your bank and set an appointment with any of their financial advisors."
         if debt_repay == true
@@ -94,8 +85,9 @@ module QuizzesHelper
             debt_repay_false
         end
     end
-    def debt_repay_value_eval
+    def debt_repay_value_eval(debt_repay_value)
         debt_repay_value = @quiz.debt_repay_value
+        income = @quiz.income
         abc = "Your debt payments should not exceed 40% of your net income."
         abc2 = "There is nothing wrong with using loans to buy a home, finance a car or get an education. But to stay our of trouble, your debt payments should not exceed 40% of your net income."
         if debt_repay_value < 0.4*income
@@ -139,14 +131,7 @@ module QuizzesHelper
         end
     end
 
-    def rsavings_eval
-        rsavings = @quiz.rsavings
 
-    end
-    
-    def inv_eval
-        investments = @quiz.investments
-    end
 
     def house_eval
         house_monthly = @quiz.house_bills

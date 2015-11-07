@@ -41,6 +41,6 @@ class QuizzesController < ApplicationController
     end
   
     def quiz_params
-      params.require(:quiz).permit(:income, :total_bills, :mortgage, :car_bills, :leisure, :sports, :movie_resto_coffee, :groceries, :travel, :social_events, :shopping, :gambling, :charity, :house_value, :car_value, :esavings, :rsavings, :investments, :student_loan, :personal_loan, :medical_loan, :other_loans, :debt_repay, :debt_repay_value, :email)
+      params.require(:quiz).permit(:income, :other_bills, :house_bills, :leisure, :car_bills, :house_value, :esavings, :rsavings, :investments, :student_loan, :personal_loan, :medical_loan, :car_loan, :debt_repay, :debt_repay_value, :email)
     end
 end
