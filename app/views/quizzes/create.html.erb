@@ -1,0 +1,50 @@
+<%= render 'jquery_script_janko' %>
+<section id="result1" data-type="background" data-speed="10" class="pages">   
+    <div id="main">
+        <div id="header" align="center">
+            
+        <h4><img src="/assets/savings.png" alt="" style="height:5%"> Here's your report</h4>
+        </div>
+        <article>
+            <br/>
+            <div align="center" >
+     
+                <br/>
+                 <!---<img src="/assets/pig-hot-air.png" alt="" style="height:30%"> --->
+                
+
+                
+                <br/>
+            <form id="resultsform" action="" style="width:670px;height:400px;background:#E4E4E4">
+                
+                <fieldset>
+                    <legend><h4>Expenses </h4></legend>
+                    <p><%= render 'total_expenses' %></p>
+                    <p><%= render 'car_value_p' %></p><br/><br/><br/><br/>
+                </fieldset>
+                <fieldset>
+                    <legend><h4>Blast from the Past</h4></legend>
+                    
+                    <p><%= render 'total_loans' %></p><br/><br/><br/><br/>
+                    
+                </fieldset>
+                <fieldset>
+                    <legend><h4>Thinking about the Future</h4></legend>
+                    <p><%= render 'savings_p' %></p>
+                </fieldset>
+                <fieldset>
+                    <legend><h4>Housing expenses</h4></legend>
+                    <p><%= render 'mortgage_p' %></p>
+                    <br/> <br/>
+                    <h9> <%= text_field_tag :email, 'email address'  %> <br/> <%= link_to "Send the Unbroke Report to your Email", sendrequest_path(@quiz), class: "btn-3" %></h9>
+                    <br/><br/><br/>
+                </fieldset>
+            </form> 
+            
+            </div>
+            <p><%= render 'table_summary' %></p>
+            <p><%= render 'detailed_summary' %></p>
+         </article>
+
+    </div>
+</section>

@@ -1,0 +1,74 @@
+<!--- create editable table http://www.w3schools.com/jsref/met_table_insertrow.asp --->
+<!--- Sum HTML Textbox Values http://viralpatel.net/blogs/sum-html-textbox-values-using-jquery-javascript/ --->
+
+<table width="300px" border="1" style="border-collapse:collapse;background-color:#E8DCFF">
+    <tr>
+        <td width="40px">1</td>
+        <td>Income</td>
+        <td><%= text_field_tag 'txti', @quiz.income, class: 'txt' %></td>
+        
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Total Expenses</td>
+        <td><%= text_field_tag 'txte', total_expenses*-1, class: 'txt' %></td>
+
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Savings</td>
+        <td><%= text_field_tag 'txts', '0.0', class: 'txt' %></td>
+
+
+    </tr>
+    <tr id="summation">
+        <td>&nbsp;</td>
+        <td align="right">Sum :</td>
+        <td align="center"><span id="sum"><%= @quiz.income - total_expenses %></span></td>
+    </tr>
+     
+</table>
+<input type="button" onClick=" check(); " value="Refresh">
+<script> 
+     function check() {
+          document.getElementById('txte').value=<%= (total_expenses*1).round(1) %>;
+          document.getElementById('txti').value=<%= @quiz.income.round(1) %>;
+          document.getElementById('txts').value= 0;
+     } 
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ 
+<script>
+
+    $(document).ready(function(){
+ 
+        //iterate through each textboxes and add keyup
+        //handler to trigger sum event
+        $(".txt").each(function() {
+ 
+            $(this).keyup(function(){
+                calculateSum();
+            });
+        });
+ 
+    });
+ 
+    function calculateSum() {
+ 
+        var sum = 0;
+        //iterate through each textboxes and add the values
+        $(".txt").each(function() {
+ 
+            //add only if the value is number
+            if(!isNaN(this.value) && this.value.length!=0) {
+                sum += parseFloat(this.value);
+            }
+ 
+        });
+        //.toFixed() method will roundoff the final sum to 2 decimal places
+        $("#sum").html(sum.toFixed(2));
+    }
+</script>
+

@@ -1,0 +1,335 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter);
+/*basic reset*/
+
+a:link {
+    color: #990000;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #990000;
+}
+
+/* mouse over link */
+a:hover {
+    text-decoration: none !important;
+    background: #FEA9A9;
+    padding: 10px 15px 10px 12px;
+}
+
+/* selected link */
+a:active {
+    color: #990000;
+}
+
+a.button:link {
+    color: #FFE066;
+    text-decoration: none;
+}
+a.button:hover {
+    text-decoration: none !important;
+    background-color:transparent;
+}
+
+.btn {
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  text-shadow: 1px 1px 2px #756d75;
+  border-radius: 9px;
+  color: #ffffff;
+  background: #fc6565;
+  padding: 10px 20px 10px 15px;
+  text-decoration: none;
+  font-size: 50;
+}
+
+.btn:hover {
+  background: #990000;
+  text-decoration: none;
+  
+}
+
+.btn-2 {
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  text-shadow: 1px 1px 2px #756d75;
+  border-radius: 9px;
+  color: #ffffff;
+  background: #fc6565;
+  padding: 10px 20px 10px 15px;
+  text-decoration: none;
+}
+
+.btn-2:hover {
+  background: #990000;
+  text-decoration: none;
+  
+}
+
+.btn-3 {
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  color: #ffffff;
+  background: #FFE066;
+  padding: 3px 5px 5px 3px;
+  text-decoration: none;
+}
+
+.btn-3:hover {
+  background: #fc6565;
+  color: #ffffff;
+  padding: 2px 5px 5px 2px;
+  text-decoration: none;
+  
+}
+#home { 
+  background-color: #fff;
+  height: 1000px; 
+  margin: -20px auto;
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  background-size:  cover; 
+}
+ 
+#home article { 
+  height: 500px; 
+  position: absolute; 
+  text-align: center; 
+  top: 10px; 
+  width: 100%; 
+
+}
+
+
+#income { 
+  background-color: #fff;
+  /*background-color: #19A319;*/
+  /*background: url('coins.png') 40% 0 repeat fixed; min-height: 1000px; */
+  background-size:  cover; 
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  /*-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+  /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+
+}
+ 
+#income article { 
+  height: 300px; 
+  position: absolute;
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
+  background-color: #E4E4E4;
+
+}
+#income .field input {
+  height: 2em;
+  text-align: center;
+
+}
+#bills { 
+  background-color: #fff;
+  /*background-color: #8FAC9D; */
+  /*background: url('bw-stripes-hori.jpg') 50% 0 repeat fixed; min-height: 1000px;*/
+  background-size:  cover; 
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  /*-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+  /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+
+}
+ 
+#bills article { 
+  height: relative; 
+  position: absolute;
+  text-align: center; 
+  top: 90px; 
+  width: 100%; 
+  background-color: #E4E4E4;
+  
+}
+
+#bills .field input {
+  height: 2em;
+  text-align: center;
+
+}
+
+#leisure { 
+  background-color: #fff;
+  /*background: url('patterns12.png') 50% 0 repeat fixed; min-height: 1000px;*/
+  background-size:  cover; 
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  /*-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+  /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+
+}
+ 
+#leisure article { 
+  height: relative; 
+  position: absolute;
+
+  text-align: center; 
+  top: 140px; 
+  width: 100%; 
+  background-color: #E4E4E4;
+
+}
+
+#leisure .field input {
+  height: 2em;
+  text-align: center;
+
+}
+
+#savings { 
+  background-color: #fff;
+  /*background-color: #19A319;*/
+  /*background: url('piggy.png') 50% 0 repeat fixed; min-height: 1000px; */
+  background-size:  cover; 
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  /*-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+  /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+
+}
+ 
+#savings article { 
+  height: relative; 
+  position: absolute;
+
+  text-align: center; 
+  top: 60px; 
+  width: 100%; 
+  background-color: #E4E4E4;
+
+}
+#savings .field input {
+  height: 2em;
+  text-align: center;
+
+}
+
+#debt { 
+  background-color: #fff;
+  /*background: url('bw-stripes-hori.jpg') 50% 0 repeat fixed; min-height: 1000px;*/
+  background-size:  cover; 
+  height: 1000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  /*-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+  /*box-shadow: 0 0 50px rgba(0,0,0,0.8); */
+
+}
+ 
+#debt article { 
+  height: relative; 
+  position: absolute;
+  text-align: center; 
+  top: 50px; 
+  width: 100%; 
+  background-color: #E4E4E4;
+
+}
+#debt .field input {
+  height: 2em;
+  text-align: center;
+
+}
+
+#result1 { 
+  background-color: #fff;
+  /* background-color: #9ed2f1; */
+  background-size: cover; 
+  height: 1000px; 
+  margin: -20px auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+
+}
+ 
+#result1 article { 
+  height: relative; 
+  position: absolute;
+  text-align: center; 
+  top: 60px; 
+  width: 100%; 
+  background-color: rgba(255, 255, 255, 0.0);
+
+}
+
+#summation {
+    font-size: 18px;
+    font-weight: bold;
+    color:#174C68;
+}
+.txt {
+    background-color: #FEFFB0;
+    font-weight: bold;
+    text-align: right;
+}
+#summation2 {
+    font-size: 18px;
+    font-weight: bold;
+    color:#174C68;
+}
+.txt2 {
+    background-color: #FEFFB0;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+fieldset { border:none; width:670px;}
+legend { margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
+
+.prev, .next { color:#fff; background-color:#FFE066; padding:5px 10px; text-decoration:none;}
+.prev:hover, .next:hover { background-color:#000; color:#fff; text-decoration:none;}
+.prev { float:left;}
+.next { float:right;}
+
+#steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
+#steps li {font-size:30px; float:left; padding:10px; color:#b0b1b3;}
+#steps li span {font-size:18px; display:block;}
+#steps li.current { color:#000;}
+#makeWizard { background-color:#b0232a; color:#fff; padding:5px 10px; text-decoration:none; font-size:30px;}
+#makeWizard:hover { background-color:#000;}

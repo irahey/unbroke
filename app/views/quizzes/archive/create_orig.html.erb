@@ -1,0 +1,35 @@
+<%= render 'jquery_script_janko' %>
+<section id="result1" data-type="background" data-speed="10" class="pages">   
+    <div id="main">
+        <div id="header">
+            <img src="/assets/savings.png" alt="" style="height:3%"> <i>Here's your Unbroke report</i>
+        </div>
+        <article>
+        <div>
+            <div class="col-md-6">
+                <center>
+                <p><%= render 'total_expenses' %></p>
+                <p><%= render 'car_value_p' %></p>
+                <p><%= render 'total_loans' %></p>
+                <p><%= render 'savings_p' %></p>
+                <p><%= render 'mortgage_p' %></p>
+                <h5> <%= text_field_tag :email %>  <%= link_to "Send this Report to Email", sendrequest_path(@quiz), class: "btn-2" %></h5>
+               </center>
+            </div>
+            <div class="col-md-6">
+                <center>
+                <img src="/assets/pig-hot-air.png" alt="" style="height:15%">
+                <p><%= render 'calc' %></p>
+                <p><%= render 'table_summary' %></p>
+                
+         
+                
+                </center>
+                
+            </div>
+         </div>
+
+         </article>
+
+    </div>
+</section>

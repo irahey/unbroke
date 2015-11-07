@@ -1,0 +1,26 @@
+<table width="350px">
+   <tr>
+
+        <td><p>Income</p></td>
+        <td><%= text_field_tag 'txti', @quiz.income, class: 'txt' %></td>
+        
+    </tr>
+  
+        <td><p>Total Expenses</p></td>
+        <td><%= text_field_tag 'txte', total_expenses*-1, class: 'txt' %></td>
+
+    </tr>
+    <tr>
+   
+        <td><p>Savings</p></td>
+        <td><%= text_field_tag 'txts', total_investments, class: 'txt' %></td>
+
+
+    </tr>
+    <tr id="summation">
+
+        <td align="right">Sum :</td>
+        <td align="center"><span id="sum"><%= @quiz.income - total_expenses %></span></td>
+    </tr>
+    
+</table>

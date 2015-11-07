@@ -1,0 +1,126 @@
+
+        <form id="bbform" action="quizzes/create" method="post">
+        <%= form_for @quiz, :remote => true, :html => { :id => "bbform"} do |f| %>
+        <section id="income" data-type="background" data-speed="10" class="pages"> 
+        
+            <article>
+            <%= render 'shim2' %>
+            <a name="income"></a>
+            <div class="field">
+                <h2>Net Monthly Income <img src="/assets/income.png" alt="" style="height:30%"></h2><br/>
+            <h4>Income $<%= f.number_field :income, placeholder: '0' %> </h4><br/>
+            <h7><a href="#bills">Next ></a></h7><br/>
+            </article>
+            
+            </div>
+        </section>
+        <section id="bills" data-type="background" data-speed="10" class="pages">   
+            <article><%= render 'shim2' %>
+            <h2>Bills, Bills, Bills <img src="/assets/expenses.png" alt="" style="height:9%"></h2>
+            <a name="bills"></a>
+            <div class="field">
+          <br/>
+            <h4>Other Bills (internet, phone plan, cable, etc.): $<%= f.number_field :other_bills, placeholder: '0' %></h4><br/>
+            
+            </div>
+            <div class="field">
+            <h4>Transportation Bills (bus pass, gas, insurance, payments, etc.): $<%= f.number_field :car_bills, placeholder: '0' %></h4><br/>
+            </div>
+
+            <div class="field">
+            <h4>House payments (monthly rent/mortgage payments): $<%= f.number_field :house_bills, placeholder: '0' %></h4> <br/>
+            </div>
+              <h7><a href="#income">< Previous </a>...
+              <a href="#leisure">Next ></a></h7>
+              <br/><br/>
+            </article>
+            
+        </section>
+        <section id="leisure" data-type="background" data-speed="10" class="pages">   
+            <article><%= render 'shim2' %>
+            <h2>Leisure <img src="/assets/leisure.png" alt="" align="middle" style="height:9%"></h2>
+            <a name="leisure"></a>
+          <div class="field">
+            <br/>
+            <h4>How much do you spend on leisure a month?</h4>
+            <h5>This includes shopping, travel, sports, social events,</h5><h5> eating out, movies, gambling, gym membership, etc.</h5>
+             <h4>$<%= f.number_field :leisure, placeholder: '0'%></h4>
+            
+          </div>
+          <br/>
+            <h7><a href="#bills">< Previous </a>...
+            <a href="#savings">Next ></a></h7><br/><br/>
+            </article>
+        </section>
+        <section id="savings" data-type="background" data-speed="10" class="pages">   
+            <article><%= render 'shim2' %>
+            <h2>Savings and Investments <img src="/assets/savings.png" alt="" align="middle" style="height:9%"></h2>
+            <a name="savings"></a>
+          
+            <br/>
+            <h4><i>Please enter the value for the fields that apply.</i></h4><br/>
+          <div class="col-xs-6">
+            <div class="field">
+              <h4>House Value: $<%= f.number_field :house_value, placeholder: '0' %></h4><br/>
+            </div>
+            <div class="field">
+              <h4>Current Car Value: $<%= f.number_field :car_value, placeholder: '0' %></h4><br/>
+            </div>
+            <div class="field">
+              <h4>Total Investments $<%= f.number_field :investments, placeholder: '0' %></h4><br/>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="field">
+              <h4> Emergency Savings: $<%= f.number_field :esavings, placeholder: '0' %></h4><br/>
+            </div>
+            <div class="field">
+              <h4>Retirement Savings: $<%= f.number_field :rsavings, placeholder: '0' %></h4><br/>
+            </div>
+          </div>
+            <h7><a href="#leisure">< Previous </a>...
+             <a href="#debt">Next ></a></h7><br/><br/>
+            </article>
+        </section>
+
+        <section id="debt" data-type="background" data-speed="10" class="pages">   
+            <article><%= render 'shim2' %><h2>Borrowed Money <img src="/assets/borrow2.png" alt="" align="middle" style="height:9%"></h2>
+            <a name="debt"></a>
+            <div class="col-xs-6">
+              <div class="field">
+                <br/>
+                <h5>Please enter the value for the fields that apply.</h5>
+                <h4>Student Loan: $<%= f.number_field :student_loan, placeholder: '0' %></h4><br/>
+              </div>
+              <div class="field">
+                <h4>Personal Loan:  $<%= f.number_field :personal_loan, placeholder: '0' %></h4><br/>
+              </div>
+              <div class="field">
+                <h4>Medical Loan: $<%= f.number_field :medical_loan, placeholder: '0' %></h4><br/>
+              </div>
+              <div class="field">
+                <h4>Car Loan: $<%= f.number_field :car_loan, placeholder: '0' %></h4><br/>
+              </div>
+              </div>
+              <div class="col-xs-6">
+              <div class="field">
+                <br/>
+                <h4>Are you on a debt repayment program? <%=  f.check_box :debt_repay, :style => "width: 30px; height: 30px;" %></h4><br/>
+              </div>
+              <div class="field">
+                <h4>How much do you pay monthly for your debt?  $<%= f.number_field :debt_repay_value, placeholder: '0' %></h4><br/>
+  
+                
+              </div>
+              
+                <br/><h7><a href="#savings">< Previous </a></h7><br/><br/>
+                <h8><%= f.submit "Unbroke it", class: "btn-2", id: "submitinfo" %></h8></div>
+                </article>
+             </section>
+
+            
+
+
+        <% end %>
+    </div>
+    </form>
