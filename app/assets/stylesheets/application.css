@@ -317,7 +317,7 @@ a.button:hover {
 }
 
 
-fieldset { border:none; width:670px;}
+fieldset { border:none; width:650px;}
 legend { margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
 
 .prev, .next { color:#fff; background-color:#FFE066; padding:5px 10px; text-decoration:none;}

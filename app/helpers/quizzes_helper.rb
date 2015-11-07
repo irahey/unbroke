@@ -112,7 +112,7 @@ module QuizzesHelper
     end
     def total_investments_eval
         good_job = "Keep up the good work and continue saving up and investing for the future!"
-        no_svgs = "Either you did not have the chance to start saving early or you must have used your savings for a very important life situation. You need to think about saving money for the future. Once you have the chance to adjust your budget, it wouldn't be a bad idea to start saving up for the future!"
+        no_svgs = "You need to think about saving money for the future. Once you have the chance to adjust your budget, it wouldn't be a bad idea to start saving up for the future!"
         if total_investments == 0
             no_svgs
         else
