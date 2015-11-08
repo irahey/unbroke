@@ -102,3 +102,6 @@ $(document).ready(function(){
 
     }
 })(jQuery); 
+$(document).ready(function(){
+    $("#resultsform").formToWizard({ submitButton: 'SaveAccount' })
+});
