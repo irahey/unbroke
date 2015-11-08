@@ -26,12 +26,8 @@ class QuizzesController < ApplicationController
 
   end
 
-
-  def send_email
-      QuizMailer.sample_email(@quiz).deliver
-  end
   def sendrequest 
-    send_email
+    QuizMailer.sample_email(@quiz).deliver_now
     flash[:notice] = 'Email Sent!'
     redirect_to root_path
   end  
