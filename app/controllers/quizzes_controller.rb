@@ -31,10 +31,11 @@ class QuizzesController < ApplicationController
       QuizMailer.sample_email(@quiz).deliver
   end
   def sendrequest 
-    QuizMailer.sample_email(@quiz).deliver
+    send_email
     flash[:notice] = 'Email Sent!'
     redirect_to root_path
   end  
+  
   private
     def set_quiz
       @quiz = Quiz.find(params[:id])
