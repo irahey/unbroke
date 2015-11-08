@@ -116,7 +116,7 @@ module QuizzesHelper
         if total_investments == 0
             no_svgs
         else
-            "Your total savings and investments is: " + total_investments.to_s + "." + good_job
+            "Your total savings and investments is: $" + total_investments.to_s + ". " + good_job
         end
     end
     def esavings_eval
