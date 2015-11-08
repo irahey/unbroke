@@ -15,18 +15,18 @@ module QuizzesHelper
         abc = total_expenses
         income = @quiz.income
         if abc > income
-            "You are spending more than what you earn." + leisure_eval
+            "You are spending more than what you earn. " + leisure_eval
         elsif abc < (0.9*income)
-            "Good job! You are living within your means and you spare at least 10% of your income for savings or as contingency fund for unexpected monthly expenses."
+            "Good job! You are living within your means and you spare at least 10% of your income for savings or as contingency fund for unexpected monthly expenses. "
         else
-            "Good job! You are living within your means."
+            "Good job! You are living within your means. "
         end
     end
     def leisure_eval
         leisure = @quiz.leisure
         income = @quiz.income
         if leisure > 0.1*income
-            "And out of your total expenses, you are spending more than 10% of your monthly income on leisure. Cutting your leisure expenses down could free up some budget."
+            "And out of your total expenses, you are spending more than 10% of your monthly income on leisure. Cutting your leisure expenses down could free up some budget. "
         else
             ""
         end
@@ -54,11 +54,11 @@ module QuizzesHelper
         income = @quiz.income
         debt_repay = @quiz.debt_repay
         debt_repay_value = @quiz.debt_repay_value
-        income60 = "Your total loans, excluding house and car loans, are more than 5 times your current annual income."
-        income36 = "Your total loans, excluding house and car loans, are less than 3 times your current annual income."
-        income12 = "Your total loans, excluding house and car loans, is only less than a year's worth of your current annual income."
-        income6 = "Your total loans, excluding house and car loans, is only less than half a year's worth of your current annual income."
-        debtfree = "Congratulations on being debt-free!"
+        income60 = "Your total loans, excluding house and car loans, are more than 5 times your current annual income. "
+        income36 = "Your total loans, excluding house and car loans, are less than 3 times your current annual income. "
+        income12 = "Your total loans, excluding house and car loans, is only less than a year's worth of your current annual income. "
+        income6 = "Your total loans, excluding house and car loans, is only less than half a year's worth of your current annual income. "
+        debtfree = "Congratulations on being debt-free! "
         if abc > 60*income
             income60 + debt_repay_eval(debt_repay, debt_repay_value)
         elsif abc > 36*income
@@ -77,8 +77,8 @@ module QuizzesHelper
     def debt_repay_eval(debt_repay, debt_repay_value)
         debt_repay = @quiz.debt_repay
         debt_repay_value = @quiz.debt_repay_value
-        debt_repay_true =  "It is good that you already have a debt repayment program in place. All you need to do is pay for your debt diligently and soon enough, you're going to be debt-free!"
-        debt_repay_false =  "It is recommended to have a debt repayment plan or program in place. You can make your own payment plan or you may visit your bank and set an appointment with any of their financial advisors."
+        debt_repay_true =  "It is good that you already have a debt repayment program in place. All you need to do is pay for your debt diligently and soon enough, you're going to be debt-free! "
+        debt_repay_false =  "It is recommended to have a debt repayment plan or program in place. You can make your own payment plan or you may visit your bank and set an appointment with any of their financial advisors. "
         if debt_repay == true
             debt_repay_value_eval(debt_repay_value) + "Nonetheless... " + debt_repay_true
         else
@@ -88,12 +88,12 @@ module QuizzesHelper
     def debt_repay_value_eval(debt_repay_value)
         debt_repay_value = @quiz.debt_repay_value
         income = @quiz.income
-        abc = "Your debt payments should not exceed 40% of your net income."
-        abc2 = "There is nothing wrong with using loans to buy a home, finance a car or get an education. But to stay our of trouble, your debt payments should not exceed 40% of your net income."
+        abc = "Your debt payments should not exceed 40% of your net income. "
+        abc2 = "There is nothing wrong with using loans to buy a home, finance a car or get an education. But to stay our of trouble, your debt payments should not exceed 40% of your net income. "
         if debt_repay_value < 0.4*income
-            "You've got your debt under control!" + abc
+            "You've got your debt under control! " + abc
         else
-            "You are carrying too much debt." + abc2
+            "You are carrying too much debt. " + abc2
         end
     end
 
@@ -111,8 +111,8 @@ module QuizzesHelper
         (@quiz.esavings + @quiz.rsavings + @quiz.investments).round(1)
     end
     def total_investments_eval
-        good_job = "Keep up the good work and continue saving up and investing for the future!"
-        no_svgs = "You need to think about saving money for the future. Once you have the chance to adjust your budget, it wouldn't be a bad idea to start saving up for the future!"
+        good_job = "Keep up the good work and continue saving up and investing for the future! "
+        no_svgs = "You need to think about saving money for the future. Once you have the chance to adjust your budget, it wouldn't be a bad idea to start saving up for the future! "
         if total_investments == 0
             no_svgs
         else
@@ -122,12 +122,12 @@ module QuizzesHelper
     def esavings_eval
         abc2 = esavings_p
         
-        abc = "It is recommended to keep at least 3 months worth of expenses or a high-yield money market fund for emergencies."
+        abc = "It is recommended to keep at least 3 months worth of expenses or a high-yield money market fund for emergencies. "
 
         if abc2 < 3
-            "You also have enough emergency savings." + abc
+            "You also have enough emergency savings. " + abc
         else 
-            "You might want to try to save up a little bit more." + abc
+            "You might want to try to save up a little bit more. " + abc
         end
     end
 
@@ -138,12 +138,12 @@ module QuizzesHelper
         house_value = @quiz.house_value
         income = @quiz.income
         exp = total_expenses
-        good_rent = "Your monthly rental expenses are under control!"
-        fancy_rent = "You are spending more than 60% of your income for your monthly rent but you must have your own reasons for staying there. Remember that you can always adjust your budget by spending less in other areas such as groceries, leisure and car."
-        okay_rent = "You are spending more than 60% of your income for your monthly rent. If you don't have any other reasons for staying there, it's not a bad idea to look for a more affordable place!"
-        good_mortgage = "Your monthly amortization expenses are under control!"
-        fancy_house = "You are spending more than 30% of your income for your monthly amortization but you must have your own reasons for staying there. Remember that you can always adjust your budget by spending less in other areas such as groceries, leisure and car."
-        okay_mortgage = "You are spending more than 30% of your income for your monthly amortization. If you don't have any other reasons for staying there, it's not a bad idea to look for a more afforbable house!"
+        good_rent = "Your monthly rental expenses are under control! "
+        fancy_rent = "You are spending more than 60% of your income for your monthly rent but you must have your own reasons for staying there. Remember that you can always adjust your budget by spending less in other areas such as groceries, leisure and car. "
+        okay_rent = "You are spending more than 60% of your income for your monthly rent. If you don't have any other reasons for staying there, it's not a bad idea to look for a more affordable place! "
+        good_mortgage = "Your monthly amortization expenses are under control! "
+        fancy_house = "You are spending more than 30% of your income for your monthly amortization but you must have your own reasons for staying there. Remember that you can always adjust your budget by spending less in other areas such as groceries, leisure and car. "
+        okay_mortgage = "You are spending more than 30% of your income for your monthly amortization. If you don't have any other reasons for staying there, it's not a bad idea to look for a more afforbable house! "
         msg = "It is recommended that housing payments should not exceed more than 30% of your net monthly income. However housing prices have increased significantly over the past few years and a lot of homebuyers have broken this rule of thumb. "
         if house_value == 0
             if (house_monthly < 0.6*income)
