@@ -7,7 +7,7 @@
             <%= render 'shim2' %>
             <a name="income"></a>
             <div class="field">
-                <h2>Net Monthly Income <img src="/assets/income.png" alt="" style="height:30%"></h2><br/>
+                <h2>Net Monthly Income <img src="<%= asset_path( 'income.png' ) %>" alt="" style="height:30%"></h2><br/>
             <h4>Income $<%= f.number_field :income, placeholder: '0' %> </h4><br/>
             <h7><a href="#bills">Next ></a></h7><br/>
             </article>
@@ -16,7 +16,7 @@
         </section>
         <section id="bills" data-type="background" data-speed="10" class="pages">   
             <article><%= render 'shim2' %>
-            <h2>Bills, Bills, Bills <img src="/assets/expenses.png" alt="" style="height:9%"></h2>
+            <h2>Bills, Bills, Bills <img src="<%= asset_path( 'expenses.png' ) %>" alt="" style="height:9%"></h2>
             <a name="bills"></a>
             <div class="field">
           <br/>
@@ -38,7 +38,7 @@
         </section>
         <section id="leisure" data-type="background" data-speed="10" class="pages">   
             <article><%= render 'shim2' %>
-            <h2>Leisure <img src="/assets/leisure.png" alt="" align="middle" style="height:9%"></h2>
+            <h2>Leisure <img src="<%= asset_path( 'leisure.png' ) %>" alt="" align="middle" style="height:9%"></h2>
             <a name="leisure"></a>
           <div class="field">
             <br/>
@@ -54,7 +54,7 @@
         </section>
         <section id="savings" data-type="background" data-speed="10" class="pages">   
             <article><%= render 'shim2' %>
-            <h2>Savings and Investments <img src="/assets/savings.png" alt="" align="middle" style="height:9%"></h2>
+            <h2>Savings and Investments <img src="<%= asset_path( 'savings.png' ) %>" alt="" align="middle" style="height:9%"></h2>
             <a name="savings"></a>
           
             <br/>
@@ -81,7 +81,7 @@
         </section>
 
         <section id="debt" data-type="background" data-speed="10" class="pages">   
-            <article><%= render 'shim2' %><h2>Borrowed Money <img src="/assets/borrow2.png" alt="" align="middle" style="height:9%"></h2>
+            <article><%= render 'shim2' %><h2>Borrowed Money <img src="<%= asset_path( 'borrow2.png' ) %>" alt="" align="middle" style="height:9%"></h2>
             <a name="debt"></a>
             <div class="col-xs-6">
               <div class="field">
