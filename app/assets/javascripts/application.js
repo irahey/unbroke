@@ -32,6 +32,15 @@ $(document).ready(function(){
 
 /* Created by jankoatwarpspeed.com */
 
+$(document).keypress(
+    function(event){
+     if (event.which == '13') {
+        event.preventDefault();
+      }
+
+
+});
+
 (function($) {
     $.fn.formToWizard = function(options) {
         options = $.extend({  
@@ -105,3 +114,5 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#resultsform").formToWizard({ submitButton: 'SaveAccount' })
 });
+
+
